@@ -4,7 +4,6 @@
 
 An intelligent Q&A assistant built using **RAG (Retrieval-Augmented Generation)** to answer complex questions related to **exotic options in finance**. This system combines PDF content extraction, vector-based document indexing using ChromaDB, and LLM-powered responses using **Gemini 1.5 Flash**.
 
----
 
 ## 🚀 Features
 
@@ -16,31 +15,6 @@ An intelligent Q&A assistant built using **RAG (Retrieval-Augmented Generation)*
 - 🌍 Automatic translation of user queries to English
 - 🔗 Easily connectable with a front-end via HTTP
 
----
-
-## 🛠️ Project Structure
-
-```
-
-📁 Exotic-Finance-Assistant
-│
-├── data/                  # Contains the input PDF file
-├── chroma\_db/             # Vector database files (ChromaDB)
-├── src/                   # Core logic modules
-│   ├── pdf\_utils.py       # PDF text extraction
-│   ├── chunking.py        # Text segmentation
-│   ├── db.py              # ChromaDB setup and interaction
-│   ├── rag\_pipeline.py    # RAG pipeline logic
-│   └── llm\_utils.py       # Translation + Gemini API calls
-├── main.py                # FastAPI server entrypoint
-├── prompt.py              # System prompt for Gemini
-├── requirements.txt       # Python dependencies
-├── .env                   # Configuration file (API keys, etc.)
-└── README.md              # This file
-
-````
-
----
 
 ## ⚙️ Installation
 
@@ -119,23 +93,20 @@ GET /query?query=What are the characteristics of an Asian option?
 * [FastAPI](https://fastapi.tiangolo.com/)
 * [Exotic Options - Investopedia](https://www.investopedia.com/terms/e/exoticoption.asp)
 
----
 
 ## 👨‍💻 Author
 
 **Fofana Ibrahim Seloh**
+
 Engineering student passionate about market finance, AI, and data science.
 📫 [LinkedIn](https://www.linkedin.com/in/fofanaibrahimseloh) • ✉️ [Email](mailto:fofanaibseloh@gmail.com)
 
----
+
 
 ## 🛡️ License
 
 This project is licensed under the MIT License.
 
-```
-
----
 
 Let me know if you'd like me to push it directly to your GitHub repo or prepare it in a file you can download.
 ```
