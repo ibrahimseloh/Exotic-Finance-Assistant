@@ -1,112 +1,119 @@
+Here's the English version of the `README.md` file:
 
-```markdown
-# 📈 Exotic Finance Assistant
+````markdown
+# Praxis - Q/A Assistant for Exotic Options
 
-An intelligent Q&A assistant, called Praxis built using **RAG (Retrieval-Augmented Generation)** to answer complex questions related to **exotic options in finance**. This system combines PDF content extraction, vector-based document indexing using ChromaDB, and LLM-powered responses using **Gemini 1.5 Flash**.
+**Praxis** is an intelligent assistant for exotic options finance, utilizing large language models (LLM) to answer questions related to exotic options and structured finance products. The system is based on the **RAG (Retrieval-Augmented Generation)** architecture, extracting and indexing information from PDF files while generating precise and detailed answers.
 
+## Key Features
 
-## 🚀 Features
+- **PDF Data Extraction**: The application extracts data from a PDF file regarding exotic options and indexes it into a ChromaDB database.
+- **Natural Language Answers**: The tool generates detailed, quantitative, and rigorous responses using Google's **Gemini 1.5 Flash** model.
+- **User Interface with Streamlit**: An interactive interface allowing users to ask questions and view answers, along with the sources used to generate those answers.
 
-- 📄 Automatic PDF text extraction
-- 🔍 Smart chunking of content for better retrieval
-- 💾 Vector database integration with [ChromaDB](https://docs.trychroma.com/)
-- 🧠 Gemini-powered LLM for answer generation
-- 🌐 REST API with [FastAPI](https://fastapi.tiangolo.com/)
-- 🌍 Automatic translation of user queries to English
-- 🔗 Easily connectable with a front-end via HTTP
+## Prerequisites
 
+Before running the application, you need to install the following dependencies:
 
-## ⚙️ Installation
+### Dependencies
 
-### 1. Clone the project
+- **FastAPI**: Framework for building the RESTful API.
+- **uvicorn**: ASGI server for running the FastAPI application.
+- **chromadb**: Used for managing the Chroma database.
+- **pydantic**: Data validation for input and output.
+- **PyPDF2**: Library to extract text from PDF files.
+- **google-generativeai**: For integration with Google's **Gemini 1.5 Flash** model.
+- **python-dotenv**: For managing environment variables.
+- **streamlit**: Library for creating the user interface.
+- **streamlit-pdf-viewer**: For displaying PDF files in Streamlit.
 
-```bash
-git clone https://github.com/fofanaibrahimseloh/Exotic-Finance-Assistant.git
-cd Exotic-Finance-Assistant
-````
-
-### 2. Create a virtual environment
-
-```bash
-python3 -m venv venv
-source venv/bin/activate  # or .\venv\Scripts\activate on Windows
-```
-
-### 3. Install dependencies
+You can install these libraries by running:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Set up environment variables
+## Configuration
 
-Create a `.env` file at the root:
+1. **Gemini API Key**: Before using the application, you need to configure the Gemini API key. Use the sidebar interface in Streamlit to enter your API key. This key is required to interact with the **Gemini 1.5 Flash** model.
 
-```
-GEMINI_API_KEY=your_google_api_key
-DB_PATH=chroma_db
-COLLECTION_NAME=exotic_option
-PDF_PATH=data/exotic_option.pdf
-```
+2. **File Paths**:
+   - **PDF_PATH**: The path to the PDF file containing information about exotic options.
+   - **DB_PATH**: The path where the Chroma database will be stored.
+   - **COLLECTION_NAME**: The name of the Chroma collection where the extracted data will be stored.
 
----
+## Running the Application
 
-## ▶️ Run the API locally
-
-```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
-```
-
-### ✨ Available Endpoints
-
-* `GET /query?query=...` → Ask a question about exotic finance
-* `POST /init` → Initializes the PDF indexing (run once)
-
----
-
-## ☁️ Deployment
-
-### Backend (FastAPI)
-
-* Deploy via [Railway](https://railway.app/)
-* Add `.env` variables in Railway's dashboard
-
-### Frontend (Optional)
-
-* Connect via `fetch("/query?query=...")`
-* Deploy your front-end using [Cloudflare Pages](https://pages.cloudflare.com/)
-
----
-
-## 💬 Sample Question
+1. Ensure **FastAPI** and **Uvicorn** are installed.
+2. Run the API using Uvicorn:
 
 ```bash
-GET /query?query=What are the characteristics of an Asian option?
+uvicorn app:app --reload
 ```
+
+This will start the API on `http://localhost:8000`.
+
+3. To start the Streamlit interface, use the following command:
+
+```bash
+streamlit run app.py
+```
+
+This will open the application in your browser at `http://localhost:8501`.
+
+## API Endpoints
+
+### `GET /set_gemini_key/`
+
+This endpoint allows you to set the Gemini API key required to interact with the model. You must send the key via a GET request with the `api_key` parameter.
+
+**Example:**
+
+```bash
+GET http://localhost:8000/set_gemini_key/?api_key=your_api_key
+```
+
+### `GET /query`
+
+This endpoint allows you to ask questions and get answers about exotic options from the extracted and indexed data in ChromaDB. You must send a GET request with the `query` parameter.
+
+**Example:**
+
+```bash
+GET http://localhost:8000/query?query=What is the difference between an Asian option and a barrier option?
+```
+
+Response: A structured response containing the answer and the sources used.
+
+## Project Structure
+
+Here is the project structure:
+
+```
+├── app.py                    # FastAPI application
+├── requirements.txt           # List of dependencies
+├── src/
+│   ├── db.py                 # Code for managing the ChromaDB database
+│   ├── rag_pipeline.py       # RAG pipeline for generating answers
+│   └── llm_utils.py          # Utilities for interacting with the Gemini model
+├── data/
+│   └── exotic_option.pdf     # PDF file containing financial information
+├── .env                       # Environment variables (optional)
+└── README.md                 # This file
+```
+
+## Contribution
+
+Contributions are welcome! If you want to improve this project, feel free to open an *issue* or a *pull request*.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
 
 ---
 
-## 📚 References
-
-* [ChromaDB Docs](https://docs.trychroma.com/)
-* [Gemini API by Google](https://ai.google.dev/)
-* [FastAPI](https://fastapi.tiangolo.com/)
-* [Exotic Options - Investopedia](https://www.investopedia.com/terms/e/exoticoption.asp)
-
-
-## 👨‍💻 Author
-
-**Fofana Ibrahim Seloh**
-
-Engineering student passionate about market finance, AI, and data science.
-📫 [LinkedIn](https://www.linkedin.com/in/fofanaibrahimseloh) • ✉️ [Email](mailto:fofanaibseloh@gmail.com)
-
-
-
-## 🛡️ License
-
-This project is licensed under the MIT License.
-
-
-Let me know if you'd like me to push it directly to your GitHub repo or prepare it in a file you can download.
+Developed by **Fofana Ibrahim Seloh** – [LinkedIn](https://www.linkedin.com/in/ibrahim-seloh-fofana-6073b4291/)
 ```
+
+Make sure this file is placed in the root of your project to properly document the setup and usage steps.
+````
