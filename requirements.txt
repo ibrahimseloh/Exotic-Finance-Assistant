@@ -5,4 +5,5 @@ pydantic
 PyPDF2
 google-generativeai
 python-dotenv
-chainlit
+streamlit
+streamlit-pdf-viewer

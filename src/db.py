@@ -11,10 +11,11 @@ def initialize_chroma_db (chroma_db_path, db_name):
 
 
 def process_chunk_to_chroma(chunks, collection):
-    """ process chunk to chroma db """
-    for chunk in chunks : 
-        collection.add( 
-            ids = chunk['chunk_id'],
-            documents= chunk['text'],
+    """Process chunk to Chroma DB"""
+    for chunk in chunks:
+        collection.add(
+            ids=[chunk['id']],
+            documents=[chunk['text']],
+            metadatas=[{'id': chunk['id'],'page': chunk['page'],'doc_name': 'Exotic Options and Hybrids by Mohammed Bouzouba' ,'path_doc': 'data/exotic_option.pdf'}],
         )
     return collection

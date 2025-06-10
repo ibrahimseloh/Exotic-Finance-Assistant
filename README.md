@@ -2,7 +2,7 @@
 ```markdown
 # 📈 Exotic Finance Assistant
 
-An intelligent Q&A assistant built using **RAG (Retrieval-Augmented Generation)** to answer complex questions related to **exotic options in finance**. This system combines PDF content extraction, vector-based document indexing using ChromaDB, and LLM-powered responses using **Gemini 1.5 Flash**.
+An intelligent Q&A assistant, called Praxis built using **RAG (Retrieval-Augmented Generation)** to answer complex questions related to **exotic options in finance**. This system combines PDF content extraction, vector-based document indexing using ChromaDB, and LLM-powered responses using **Gemini 1.5 Flash**.
 
 
 ## 🚀 Features
