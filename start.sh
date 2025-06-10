@@ -4,7 +4,7 @@
 uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000} &
 
 # Démarrer Streamlit en arrière-plan
-streamlit run src/streamlit_app.py \
+streamlit run streamlit_app.py \
     --server.port ${STREAMLIT_PORT:-8501} \
     --server.headless true \
     --server.enableCORS false \
