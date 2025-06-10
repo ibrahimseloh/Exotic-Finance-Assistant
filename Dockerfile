@@ -32,4 +32,4 @@ EXPOSE $STREAMLIT_PORT
 # Script de démarrage pour lancer les deux services
 CMD ["sh", "-c", \
     "uvicorn main:app --host 0.0.0.0 --port $PORT & \
-     streamlit run src/streamlit_app.py --server.port $STREAMLIT_PORT --server.headless true --server.enableCORS false --server.enableXsrfProtection false"]
+     streamlit run streamlit_app.py --server.port $STREAMLIT_PORT --server.headless true --server.enableCORS false --server.enableXsrfProtection false"]
