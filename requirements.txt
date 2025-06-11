@@ -9,3 +9,4 @@ streamlit
 streamlit-pdf-viewer
 tiktoken
 PyMuPDF
+markdown
