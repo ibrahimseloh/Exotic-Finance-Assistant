@@ -105,7 +105,7 @@ with col_right:
         mat = fitz.Matrix(zoom, zoom)
         pix = page.get_pixmap(matrix=mat)
         img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
-        st.image(img, use_column_width=True)
+        st.image(img, use_container_width=True)
 
     if not os.path.exists(PDF_PATH):
         st.error(f"📁 Fichier introuvable : {PDF_PATH}")
