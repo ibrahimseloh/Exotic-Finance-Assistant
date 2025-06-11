@@ -1,4 +1,3 @@
-Here's the English version of the `README.md` file:
 
 ````markdown
 # Praxis - Q/A Assistant for Exotic Options
