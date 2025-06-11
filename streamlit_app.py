@@ -6,8 +6,8 @@ import os
 from markdown import markdown
 
 # ─── CONFIG ───
-API_GEMINI_KEY = "http://localhost:8000/set_gemini_key"
-API_URL = "http://localhost:8000/query"
+API_GEMINI_KEY = "https://web-production-9fe4.up.railway.app/set_gemini_key"
+API_URL = "https://web-production-9fe4.up.railway.app/query"
 PDF_PATH = "data/exotic_option.pdf"
 
 st.set_page_config(layout="wide")
