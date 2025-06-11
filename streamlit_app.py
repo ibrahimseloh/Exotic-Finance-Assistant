@@ -11,7 +11,7 @@ API_URL = "https://web-production-9fe4.up.railway.app/query"
 PDF_PATH = "data/exotic_option.pdf"
 
 st.set_page_config(layout="wide")
-st.title("🤖 Praxis – Assistant Q/A pour les Options Exotiques")
+st.title("🤖 Praxis – Q/A Assistant for Exotic Options")
 
 # ─── SIDEBAR POUR CLÉ API GEMINI ───
 with st.sidebar:
@@ -32,13 +32,14 @@ st.markdown(
     """
     <div style="background-color: #0d1b2a; padding: 1.2rem 1rem;
                 border-radius: 6px; margin-bottom: 1.5rem; color: #e0e1dd;">
-        <h4 style="margin-bottom: 0.5em;">📘 <strong>Praxis – Assistant Q/R pour les Options Exotiques</strong></h4>
+        <h4 style="margin-bottom: 0.5em;">📘 <strong>Praxis – Q/A Assistant for Exotic Options</strong></h4>
         <p style="font-size: 1.5em; line-height: 1.6;">
             Based on the architecture<strong>RAG (Retrieval-Augmented Generation)</strong>, Praxis answers your questions about exotic finance options. It extracts content from a PDF, indexes it with
             <em>ChromaDB</em>, and generates accurate responses Based on the doc Exotic Option by Bouzouba to enhance Finance concept understanding for students</strong>.
         </p>
         <p style="font-size: 0.85em; margin-top: 1em;">
             🛠️ Built and develop by <strong>Fofana Ibrahim Seloh</strong> • <a href='https://www.linkedin.com/in/ibrahim-seloh-fofana-6073b4291/' target='_blank' style='color: #91e0ff;'>LinkedIn</a>
+             <strong>Github link of the project</strong> • <a href='https://github.com/ibrahimseloh/Exotic-Finance-Assistant' target='_blank' style='color: #91e0ff;'>LinkedIn</a>
         </p>
     </div>
     """,
