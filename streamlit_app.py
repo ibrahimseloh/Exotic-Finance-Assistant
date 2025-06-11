@@ -11,10 +11,6 @@ API_URL = "https://web-production-9fe4.up.railway.app/query"
 PDF_PATH = "data/exotic_option.pdf"
 
 st.set_page_config(layout="wide")
-st.markdown(
-    '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">',
-    unsafe_allow_html=True
-)
 st.title("🤖 Praxis – Q/A Assistant for Exotic Options")
 
 # ─── SIDEBAR POUR CLÉ API GEMINI ───
