@@ -16,16 +16,16 @@ st.title("🤖 Praxis – Assistant Q/A pour les Options Exotiques")
 # ─── SIDEBAR POUR CLÉ API GEMINI ───
 with st.sidebar:
     st.header("⚙️ Configuration")
-    gemini_key = st.text_input("Entrez votre clé API Gemini", type="password")
-    if st.button("Envoyer la clé API"):
+    gemini_key = st.text_input("Enter your Gemini API key", type="password")
+    if st.button("Submit"):
         if gemini_key.strip():
             response = requests.get(API_GEMINI_KEY, params={"api_key": gemini_key})
             if response.status_code == 200:
-                st.success("Clé API Gemini envoyée avec succès !")
+                st.success("Gemini API key sent successfully!")
             else:
-                st.error(f"Erreur lors de l'envoi de la clé API : {response.status_code}")
+                st.error(f"Error sending the API key: {response.status_code}")
         else:
-            st.warning("Veuillez entrer une clé API valide.")
+            st.warning("Enter a valid API key.")
 
 # ─── INTRO ───
 st.markdown(
@@ -34,11 +34,11 @@ st.markdown(
                 border-radius: 6px; margin-bottom: 1.5rem; color: #e0e1dd;">
         <h4 style="margin-bottom: 0.5em;">📘 <strong>Praxis – Assistant Q/R pour les Options Exotiques</strong></h4>
         <p style="font-size: 1.5em; line-height: 1.6;">
-            Basé sur l’architecture <strong>RAG (Retrieval-Augmented Generation)</strong>, Praxis répond à vos questions sur les options exotiques en finance.
-            Il extrait le contenu d’un PDF, l’indexe avec <em>ChromaDB</em>, et génère des réponses précises grâce au LLM <strong>Gemini 1.5 Flash</strong>.
+            Based on the architecture<strong>RAG (Retrieval-Augmented Generation)</strong>, Praxis answers your questions about exotic finance options. It extracts content from a PDF, indexes it with
+            <em>ChromaDB</em>, and generates accurate responses Based on the doc Exotic Option by Bouzouba to enhance Finance concept understanding for students</strong>.
         </p>
         <p style="font-size: 0.85em; margin-top: 1em;">
-            🛠️ Conçu et développé par <strong>Fofana Ibrahim Seloh</strong> • <a href='https://www.linkedin.com/in/ibrahim-seloh-fofana-6073b4291/' target='_blank' style='color: #91e0ff;'>LinkedIn</a>
+            🛠️ Built and develop by <strong>Fofana Ibrahim Seloh</strong> • <a href='https://www.linkedin.com/in/ibrahim-seloh-fofana-6073b4291/' target='_blank' style='color: #91e0ff;'>LinkedIn</a>
         </p>
     </div>
     """,
