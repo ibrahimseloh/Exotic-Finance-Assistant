@@ -1,4 +1,4 @@
-Lis ceci et quand tu finis dis oui j'ai lu : import streamlit as st
+import streamlit as st
 import requests
 import fitz  # PyMuPDF
 from PIL import Image
