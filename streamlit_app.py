@@ -39,7 +39,7 @@ st.markdown(
         </p>
         <p style="font-size: 0.85em; margin-top: 1em;">
             🛠️ Built and develop by <strong>Fofana Ibrahim Seloh</strong> • <a href='https://www.linkedin.com/in/ibrahim-seloh-fofana-6073b4291/' target='_blank' style='color: #91e0ff;'>LinkedIn</a>
-             <strong>Github link of the project</strong> • <a href='https://github.com/ibrahimseloh/Exotic-Finance-Assistant' target='_blank' style='color: #91e0ff;'>LinkedIn</a>
+            • <a href='https://github.com/ibrahimseloh/Exotic-Finance-Assistant' target='_blank' style='color: #91e0ff;'>Github</a>
         </p>
     </div>
     """,
