@@ -121,5 +121,3 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for m
 Developed by **Fofana Ibrahim Seloh** – [LinkedIn](https://www.linkedin.com/in/ibrahim-seloh-fofana-6073b4291/)
 
 ---
-
-This updated README reflects the added files (`start.sh`, `railway.json`, `Dockerfile`, and `src/pdf_utils.py`), and ensures that everything is clearly explained for setting up and running the project.
